@@ -32,11 +32,9 @@
   <link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
-    // Enables the loader and other JS-only features. The loader shows once per visit.
+    // Enables the loader and other JavaScript-only features.
     document.documentElement.classList.add('js');
-    try { if (sessionStorage.getItem('cx-loaded')) document.documentElement.classList.add('loaded-before'); } catch (e) {}
   </script>
-  <style>.loaded-before .loader { display: none; }</style>
 
   <script type="application/ld+json">
   {
@@ -82,7 +80,7 @@
   <symbol id="i-article" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
 </svg>
 
-<!-- ===== LOADER (shown once per visit while the page loads) ===== -->
+<!-- ===== LOADER (shown for 5 seconds on page load; change LOADER_MS in assets/js/main.js) ===== -->
 <div class="loader" role="status" aria-live="polite" aria-label="Loading">
   <span class="mark-spin" style="--s: min(180px, 46vw)">
     <img class="ghost" src="assets/img/brand/clover-x-mark-dark.svg" alt="" width="1220" height="1168">
@@ -101,7 +99,7 @@
 <header class="site-header">
   <div class="container header-bar">
     <a class="brand-link" href="./" aria-label="Clover-X home">
-      <img src="assets/img/brand/clover-x-logo-dark.svg" alt="Clover-X" width="120" height="84">
+      <img src="assets/img/brand/clover-x-logo-dark.svg" alt="Clover-X" width="120" height="92">
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -260,97 +258,31 @@
     </div>
   </section>
 
-  <!-- ===== TEAM & SKILLS ===== -->
+  <!-- ===== TEAM (short intro; the full profiles live on team.html) ===== -->
   <section id="team" class="section" aria-labelledby="team-title">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Team</p>
-        <h2 id="team-title">The people behind Clover-X</h2>
-        <p>Specialists you can actually talk to. Here is who you will work with, what we know and what we have built.</p>
+        <h2 id="team-title">The people behind Clover&#8209;X</h2>
+        <p>Specialists you can actually talk to. Meet the team, see what we know and what we have built.</p>
       </div>
-
-      <!-- TEAM MEMBER. To add a person, copy everything from <article class="card profile"> to </article>,
-           paste it below, and change the photo, name, role, text and links.
-           Put photos (portrait, about 480x600 px) in assets/img/team/. -->
-      <article class="card profile" aria-labelledby="p-aman">
-        <div class="profile-photo">
+      <!-- TEAM INTRO CARD: copy this <a class="card team-intro">…</a> block for each new team member. -->
+      <div class="team-intros">
+        <a class="card team-intro" href="team.html#aman-varma">
           <picture>
             <source srcset="assets/img/team/aman-varma.webp" type="image/webp">
-            <img src="assets/img/team/aman-varma.jpg" alt="Portrait of Aman Varma" width="480" height="600" loading="lazy">
+            <img class="team-intro-photo" src="assets/img/team/aman-varma.jpg" alt="" width="96" height="120" loading="lazy">
           </picture>
-        </div>
-        <div class="profile-body">
-          <div>
-            <h3 id="p-aman">Aman Varma</h3>
-            <!-- EDIT: add Aman's title at Clover-X here if you like, e.g. "Founder · Identity & Access Management" -->
+          <div class="team-intro-body">
+            <h3>Aman Varma</h3>
             <p class="role">Cybersecurity · Identity &amp; Access Management</p>
+            <p>Microsoft SC-300 certified, with enterprise experience in Entra ID, access governance and Zero Trust.</p>
           </div>
-          <div class="bio">
-            <p>Cybersecurity professional focused on Identity &amp; Access Management, with hands-on enterprise experience in Microsoft Entra ID: identity lifecycle (joiner-mover-leaver), access reviews, entitlement management, Conditional Access and Privileged Identity Management.</p>
-            <p>Interested in identity governance, authorization concepts and compliance in regulated environments, and in how automation and AI can make governance simpler for growing businesses.</p>
-          </div>
-          <dl class="facts">
-            <div><dt>Certification</dt><dd>Microsoft SC-300</dd></div>
-            <div><dt>Education</dt><dd>M.Sc. Computer Science (Cybersecurity, IAM), IU Berlin</dd></div>
-            <div><dt>Focus</dt><dd>Entra ID · Identity governance · Zero Trust</dd></div>
-            <div><dt>Languages</dt><dd>English C1 · German B1</dd></div>
-          </dl>
-          <ul class="timeline" aria-label="Background">
-            <li><strong>Cybersecurity Intern, Identity &amp; Access Management</strong><span>Daimler Truck · 2026</span></li>
-            <li><strong>Digital Forensic Intern</strong><span>IIMT College of Engineering · 2024</span></li>
-            <li><strong>IT Office Manager</strong><span>Prime Machinery · 2022 – 2024</span></li>
-          </ul>
-          <div class="profile-links">
-            <a class="btn btn-secondary btn-sm" href="https://www.linkedin.com/in/aman-varma-318321167/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
-            <a class="btn btn-secondary btn-sm" href="https://github.com/Amancs1541" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="visually-hidden"> (opens in new tab)</span></a>
-            <a class="btn btn-ghost btn-sm" href="https://amancs1541.github.io/my-portfolio/" target="_blank" rel="noopener">Full portfolio <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="visually-hidden"> (opens in new tab)</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- SKILLS & TOOLKIT: add or remove <li class="chip">…</li> items freely. -->
-      <div class="skills-block" aria-labelledby="skills-title">
-        <h3 id="skills-title" class="sub-title">Skills &amp; toolkit</h3>
-        <ul class="grid grid-4 skill-groups">
-          <li class="card skill-group">
-            <div class="skill-group-head"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg><h4>Identity &amp; access</h4></div>
-            <ul class="chips">
-              <li class="chip">Microsoft Entra ID</li><li class="chip">Active Directory</li><li class="chip">Microsoft 365</li>
-              <li class="chip">Conditional Access</li><li class="chip">PIM</li><li class="chip">Identity Protection</li>
-              <li class="chip">Access Reviews</li><li class="chip">Entitlement Management</li><li class="chip">B2B External Identities</li>
-            </ul>
-          </li>
-          <li class="card skill-group">
-            <div class="skill-group-head"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><h4>Protocols &amp; standards</h4></div>
-            <ul class="chips">
-              <li class="chip">SAML</li><li class="chip">OAuth 2.0</li><li class="chip">OpenID Connect</li><li class="chip">MFA</li>
-              <li class="chip">Zero Trust</li><li class="chip">RBAC</li><li class="chip">ISO/IEC 27001 (basics)</li><li class="chip">NIST (basics)</li>
-            </ul>
-          </li>
-          <li class="card skill-group">
-            <div class="skill-group-head"><svg class="icon" aria-hidden="true"><use href="#i-build"/></svg><h4>Automation &amp; reporting</h4></div>
-            <ul class="chips">
-              <li class="chip">Microsoft Graph API</li><li class="chip">PowerShell</li><li class="chip">Power BI</li><li class="chip">n8n</li><li class="chip">ServiceNow</li>
-            </ul>
-          </li>
-          <li class="card skill-group">
-            <div class="skill-group-head"><svg class="icon" aria-hidden="true"><use href="#i-software"/></svg><h4>Development &amp; cloud</h4></div>
-            <ul class="chips">
-              <li class="chip">Python</li><li class="chip">Flask</li><li class="chip">FastAPI</li><li class="chip">PostgreSQL</li>
-              <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Node.js</li><li class="chip">Azure App Service</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h3 class="sub-title" style="margin-top:48px">Certifications</h3>
-        <ul class="certs">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>SC-300: Identity and Access Administrator</strong><span>Microsoft</span></div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>Ethical Hacker</strong><span>Cisco</span></div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>Network Defense</strong><span>Cisco</span></div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>Cybersecurity Essentials</strong><span>Cisco</span></div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>Cybersecurity Fundamentals</strong><span>IBM</span></div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><strong>IT Fundamentals (ITF+)</strong><span>CompTIA</span></div></li>
-        </ul>
+          <span class="team-intro-cta">View portfolio <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+      <div class="team-more">
+        <a class="btn btn-primary" href="team.html">View full team portfolio <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
@@ -586,7 +518,7 @@
   <div class="container">
     <div class="footer-top">
       <div>
-        <a class="brand-link" href="./" aria-label="Clover-X home"><img src="assets/img/brand/clover-x-logo-white.svg" alt="Clover-X" width="150" height="105" loading="lazy"></a>
+        <a class="brand-link" href="./" aria-label="Clover-X home"><img src="assets/img/brand/clover-x-logo-white.svg" alt="Clover-X" width="150" height="115" loading="lazy"></a>
         <p class="footer-tagline">Secure, connected technology for growing businesses.</p>
       </div>
       <nav aria-label="Footer">

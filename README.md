@@ -3,7 +3,8 @@
 A fast, plain HTML/CSS/JS website. There is **no build step**: upload the files to GitHub and the site is live.
 
 ```
-index.html          Home page (all sections)
+index.html          Home page (services, short team intro, projects, contact …)
+team.html           Team portfolio page (full profiles, skills, certifications)
 privacy.html        Privacy policy (template, fill in the [brackets])
 imprint.html        Imprint / Impressum (template, fill in the [brackets])
 404.html            "Page not found" page
@@ -21,15 +22,24 @@ scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo cha
 2. **Contact email.** Search for `hello@clover-x.example` and replace it with your real address. This also switches on the contact form (see below).
 3. **Imprint and privacy policy.** Fill in every `[bracket]` in `imprint.html` and `privacy.html`, and have them checked by a legal professional. Both are required for a German business website.
 4. **Location.** The site says "Berlin, Germany". Change it in `index.html` if that's wrong.
-5. **Your title.** In the Team section, add your title at Clover-X (look for the `EDIT:` comment).
+5. **Your title.** In `team.html`, add your title at Clover-X (look for the `EDIT:` comment).
+6. **Your domain in links.** `index.html`, `team.html`, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
 
 ## Editing text
 
 Open `index.html` in any text editor (Notepad, VS Code) and change the words between the tags. Each section starts with a comment like `<!-- ===== SERVICES ===== -->`, so you can find your way around. Lines marked `EDIT:` are the ones you will most likely want to change.
 
-- **Add a team member:** in the Team section, copy everything from `<article class="card profile"` to `</article>`, paste it underneath and change the details. Put the photo in `assets/img/team/` (portrait, about 480×600 px, JPG or WebP).
+- **Add a team member:** two steps.
+  1. In `team.html`, copy everything from `<article id="…" class="card profile"` to `</article>`, paste it underneath and change the details. Give it a new `id`, e.g. `id="jane-doe"`.
+  2. In `index.html` (Team section), copy one `<a class="card team-intro" …>…</a>` block, change the name, short intro and photo, and point its link at `team.html#jane-doe`.
+
+  Put photos in `assets/img/team/` (portrait, about 480×600 px, JPG or WebP).
 - **Add a project:** in the Work section, copy one `<li data-domains="…">…</li>` block. `data-domains` controls the filter buttons: use any of `security web-apps software communication`.
-- **Skills:** each skill is one `<li class="chip">Skill</li>`. Add or remove freely.
+- **Skills and certifications** are on `team.html`. Each skill is one `<li class="chip">Skill</li>`; add or remove freely.
+
+## Loading screen
+
+The Clover-X loader (from `brand/source/loader-ref.html`) shows for **5 seconds** each time the home or team page opens. To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `2000` = 2 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
 
 Only add client names, logos, numbers or testimonials that the client has agreed to share.
 
@@ -81,7 +91,7 @@ All links in the site are relative, so it works at that address and on your own 
 
 **Usage rules:** keep clear space around the logo equal to the height of one petal. The full logo must be at least **120 px wide** and the mark at least **32 px**. Don't recolour, stretch or add effects.
 
-**About these files:** the logo was supplied only as PNGs (`source/logo.png` for the mark, and the wordmark embedded in `source/loader-ref.html`). The SVGs here are careful vector traces of those PNGs, checked against the originals at 400% (`check/`). They are sharp at all web sizes. For print or very large signage, ask the designer for the original vector file and replace these. The small superscript "DH" in the full logo was added in the brand typeface (Outfit) as the brief describes, because the supplied wordmark did not include it. Replace it with the designer's version if one exists.
+**About these files:** the logo was supplied only as PNGs (`source/logo.png` for the mark, and the wordmark embedded in `source/loader-ref.html`). The SVGs here are careful vector traces of those PNGs, checked against the originals at 400% (`check/`). They are sharp at all web sizes. For print or very large signage, ask the designer for the original vector file and replace these.
 
 **Regenerating** (only if the logo source changes): install Node.js, then run `npm install` and `npm run brand` in this folder.
 

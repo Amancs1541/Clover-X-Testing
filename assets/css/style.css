@@ -40,7 +40,7 @@
   --container: 1200px;
   --gutter: 16px;
   --section-y: 72px;
-  --header-h: 100px;
+  --header-h: 108px;
   --shadow: 0 1px 2px rgba(15, 43, 54, .04), 0 8px 24px rgba(15, 43, 54, .07);
 }
 @media (min-width: 768px) { :root { --gutter: 32px; --section-y: 96px; } }
@@ -186,7 +186,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .loader .mark-spin { animation: cx-breathe 2.2s ease-in-out infinite; }
 .loader-word { width: min(240px, 60vw); opacity: .92; }
 .loader-status { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.loader-label { font-family: var(--font-head); font-size: .85rem; letter-spacing: .24em; text-transform: uppercase; color: #5b7680; font-weight: 500; display: flex; }
+.loader-label { font-family: var(--font-head); font-size: .85rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); font-weight: 500; display: flex; }
 .loader-label .dots { display: inline-flex; width: 1.6em; }
 .loader-label .dots i { font-style: normal; opacity: 0; animation: cx-dot 1.5s infinite; }
 .loader-label .dots i:nth-child(2) { animation-delay: .25s; }
@@ -339,7 +339,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .skill-groups { list-style: none; }
 .skill-group { padding: 24px; }
 .skill-group-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--brand); }
-.skill-group-head h4 { font-size: 1.05rem; }
+.skill-group-head h3, .skill-group-head h4 { font-size: 1.05rem; }
 .certs { list-style: none; display: grid; gap: 12px; margin-top: 24px; }
 @media (min-width: 768px) { .certs { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .certs { grid-template-columns: repeat(3, 1fr); } }
@@ -347,6 +347,36 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .certs .icon { color: var(--accent-text); }
 .certs strong { display: block; font-size: .95rem; line-height: 1.35; }
 .certs span { font-size: .85rem; color: var(--muted); }
+/* Short team intro on the home page (full profiles are on team.html) */
+.team-intros { display: grid; gap: 20px; }
+@media (min-width: 1024px) { .team-intros { grid-template-columns: repeat(2, 1fr); } }
+.team-intro {
+  display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; padding: 20px;
+  text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.team-intro:hover { border-color: #b9cbcd; box-shadow: var(--shadow); transform: translateY(-2px); }
+.team-intro:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--surface), 0 0 0 4.5px var(--focus); border-radius: var(--radius); }
+.team-intro-photo { width: 96px; height: 120px; object-fit: cover; object-position: top; border-radius: 12px; }
+.team-intro h3 { font-size: 1.25rem; }
+.team-intro .role { color: var(--accent-text); font-weight: 700; font-size: .92rem; margin: 2px 0 8px; }
+.team-intro-body p:last-child { color: var(--muted); font-size: .95rem; }
+.team-intro-cta { grid-column: 1 / -1; display: inline-flex; align-items: center; gap: 6px; padding-top: 14px; border-top: 1px solid var(--border); font-family: var(--font-head); font-weight: 500; color: var(--brand); }
+.team-intro-cta .icon { width: 18px; height: 18px; transition: transform .18s; }
+.team-intro:hover .team-intro-cta .icon { transform: translateX(3px); }
+.team-more { margin-top: 32px; }
+@media (max-width: 479px) {
+  .team-intro { grid-template-columns: 72px 1fr; gap: 16px; align-items: start; }
+  .team-intro-photo { width: 72px; height: 90px; }
+}
+.team-more .btn { white-space: normal; text-align: left; line-height: 1.3; padding-top: 12px; padding-bottom: 12px; }
+
+/* Call-to-action band (team page) */
+.cta-band { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 1024px) { .cta-band { grid-template-columns: 1.4fr 1fr; } .cta-actions { justify-content: flex-end; } }
+.cta-band h2 { font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.6rem); margin-top: 12px; }
+.cta-band p:not(.eyebrow) { margin-top: 14px; color: var(--on-dark-muted); max-width: 560px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
 .team-note { margin-top: 32px; padding: 20px 24px; border: 1px dashed #b7c8cb; border-radius: var(--radius); color: var(--muted); }
 
 /* ==========================================================================

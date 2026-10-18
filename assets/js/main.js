@@ -2,17 +2,26 @@
 (function () {
   'use strict';
 
-  /* ---- Loader: fades out once the page has loaded (shown once per visit) ---- */
+  /* ---- Loader: stays on screen for LOADER_MS, then fades out once the page has loaded ---- */
+  var LOADER_MS = 5000; // how long the loading screen shows, in milliseconds (5000 = 5 seconds)
   var loader = document.querySelector('.loader');
-  function hideLoader() {
-    if (!loader || loader.classList.contains('is-done')) return;
-    loader.classList.add('is-done');
-    loader.setAttribute('aria-hidden', 'true');
-    try { sessionStorage.setItem('cx-loaded', '1'); } catch (e) {}
+  if (loader) {
+    document.body.style.overflow = 'hidden';
+    var hideLoader = function () {
+      if (loader.classList.contains('is-done')) return;
+      loader.classList.add('is-done');
+      loader.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+    var afterLoad = function () {
+      // performance.now() counts from the moment the page started loading.
+      var elapsed = (window.performance && performance.now) ? performance.now() : LOADER_MS;
+      setTimeout(hideLoader, Math.max(0, LOADER_MS - elapsed));
+    };
+    if (document.readyState === 'complete') afterLoad();
+    else window.addEventListener('load', afterLoad);
+    setTimeout(hideLoader, LOADER_MS + 5000); // safety net if the load event never fires
   }
-  if (document.readyState === 'complete') hideLoader();
-  else window.addEventListener('load', hideLoader);
-  setTimeout(hideLoader, 4000); // never block the page for long, even on slow connections
 
   /* ---- Header: shadow on scroll + mobile menu ---- */
   var header = document.querySelector('.site-header');

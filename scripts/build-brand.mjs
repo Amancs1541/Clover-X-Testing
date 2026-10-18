@@ -87,34 +87,21 @@ async function main() {
   const markSvg = (fill) =>
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${mark.w} ${mark.h}" role="img" aria-label="Clover-X"><path fill="${fill}" fill-rule="evenodd" d="${mark.d}"/></svg>\n`;
 
-  // Lockup: mark centred above the wordmark, small superscript "DH" at the top right.
-  // NOTE: the supplied wordmark has no "DH"; it is set here in Outfit per the brief. Replace
-  // with the designer's version when available.
-  const dhFont = opentype.parse(toArrayBuffer(await fs.readFile(fontFile(500))));
-  const lockupParts = (fill, dhFill = fill) => {
+  // Lockup: mark centred above the wordmark.
+  const lockupParts = (fill) => {
     const wordW = mark.w * 1.75;               // wordmark width relative to the mark
     const k = wordW / word.w;                   // scale the traced wordmark to that width
     const wordH = word.h * k;
     const gap = mark.h * 0.17;
-    const dhSize = wordH * 0.42;
-    const dhGap = wordH * 0.16;
-    const dhPath = dhFont.getPath('DH', 0, 0, dhSize, { letterSpacing: 0.06 });
-    const dhBox = dhPath.getBoundingBox();
-    const dhW = dhBox.x2 - dhBox.x1;
-    const totalW = wordW + dhGap + dhW;
-    const wordX = 0;
     const markX = (wordW - mark.w) / 2;
     const wordY = mark.h + gap;
-    const dh = dhFont.getPath('DH', wordX + wordW + dhGap - dhBox.x1, wordY - dhBox.y1, dhSize, { letterSpacing: 0.06 }).toPathData(1);
-    const totalH = wordY + wordH;
     const inner =
       `<path fill="${fill}" fill-rule="evenodd" transform="translate(${r(markX)} 0)" d="${mark.d}"/>` +
-      `<path fill="${fill}" fill-rule="evenodd" transform="translate(${r(wordX)} ${r(wordY)}) scale(${k.toFixed(5)})" d="${word.d}"/>` +
-      `<path fill="${dhFill}" d="${dh}"/>`;
-    return { inner, w: r(totalW), h: r(totalH) };
+      `<path fill="${fill}" fill-rule="evenodd" transform="translate(0 ${r(wordY)}) scale(${k.toFixed(5)})" d="${word.d}"/>`;
+    return { inner, w: r(wordW), h: r(wordY + wordH) };
   };
-  const lockupSvg = (fill, dhFill) => {
-    const { inner, w, h } = lockupParts(fill, dhFill);
+  const lockupSvg = (fill) => {
+    const { inner, w, h } = lockupParts(fill);
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="Clover-X">${inner}</svg>\n`;
   };
   const wordmarkSvg = (fill) =>
@@ -162,7 +149,7 @@ async function main() {
   const ogFont = opentype.parse(toArrayBuffer(await fs.readFile(fontFile(500))));
   const lines = ['Secure, connected technology', 'for businesses that mean to grow.']
     .map((t, i) => ogFont.getPath(t, 80, 400 + i * 66, 54).toPathData(1)).join('');
-  const lock = lockupParts(WHITE, MINT);
+  const lock = lockupParts(WHITE);
   const lockScale = 230 / lock.w;
   const bgScale = 620 / mark.h;
   const og = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="${DEEP}"/>` +
