@@ -3,14 +3,15 @@
 A fast, plain HTML/CSS/JS website. There is **no build step**: upload the files to GitHub and the site is live.
 
 ```
-index.html          Home page (services, team highlights, projects, contact …)
-team.html           Team portfolio page (expertise, skills, certifications)
+index.html          Home page (services, team cards, projects, contact …)
+team.html           Team page (all member cards, team skills, certifications)
+portfolio/          One portfolio page per team member (member-1.html … member-4.html)
 privacy.html        Privacy policy (template, fill in the [brackets])
 imprint.html        Imprint / Impressum (template, fill in the [brackets])
 404.html            "Page not found" page
 assets/css/style.css   All styling. Colours are at the top.
 assets/js/main.js      Loader, mobile menu, project filter, contact form
-assets/img/            Logos, social preview image; team/ and projects/ for future photos
+assets/img/            Logos, social preview image; put team photos in team/ and project images in projects/
 assets/fonts/          Outfit + Manrope, self-hosted (no Google connection, GDPR-friendly)
 brand/                 Logo deliverables (SVG + PNG), favicon set, source files
 scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo changes)
@@ -22,19 +23,25 @@ scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo cha
 2. **Contact email.** Search for `hello@clover-x.example` and replace it with your real address. This also switches on the contact form (see below).
 3. **Imprint and privacy policy.** Fill in every `[bracket]` in `imprint.html` and `privacy.html`, and have them checked by a legal professional. Both are required for a German business website.
 4. **Location.** The site says "Berlin, Germany". Change it in `index.html` if that's wrong.
-5. **Your domain in links.** `index.html`, `team.html`, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
+5. **Your domain in links.** `index.html`, `team.html`, the `portfolio/` pages, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
+6. **Team and projects.** Replace the placeholder names, photos and project texts (see below).
 
 ## Editing text
 
 Open `index.html` in any text editor (Notepad, VS Code) and change the words between the tags. Each section starts with a comment like `<!-- ===== SERVICES ===== -->`, so you can find your way around. Lines marked `EDIT:` are the ones you will most likely want to change.
 
-- **Add a project:** the Work section in `index.html` contains a commented-out project template with instructions. Delete the "Case studies are on their way" box once your first project is in.
-- **Show individual team members (optional):** `team.html` contains a commented-out profile template. Put photos in `assets/img/team/` (portrait, about 480×600 px).
+- **Team members (4 cards):** each person appears in three places, so update all three:
+  1. their card in `index.html` (Team section),
+  2. their card in `team.html`,
+  3. their own page, `portfolio/member-1.html` … `member-4.html` (name, role, introduction, about, experience, skills, certifications, projects, LinkedIn link).
+
+  Search for `Team Member 1` (etc.) to find every spot. **Photos:** save a portrait (about 480×600 px) as `assets/img/team/member-1.jpg` (etc.), then follow the `EDIT photo:` comment next to each placeholder to swap in the `<img>` line. To rename a page (e.g. `portfolio/jane-doe.html`), rename the file and update the links on the cards.
+- **Projects:** the Projects section in `index.html` has four example cards ("Project name 1" …). Edit the title, summary, client description, technologies, the details under "Read project details", and which team member worked on it. Each person's page has its own project cards too. Only include client names, numbers or images the client has agreed to share.
 - **Skills and certifications** are on `team.html`. Each skill is one `<li class="chip">Skill</li>`; add or remove freely.
 
 ## Loading screen
 
-The Clover-X loader (from `brand/source/loader-ref.html`) shows for **5 seconds** each time the home or team page opens. To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `2000` = 2 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
+The Clover-X loader (from `brand/source/loader-ref.html`) shows for **2 seconds** each time a page opens (home, team and portfolio pages). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
 
 Only add client names, logos, numbers or testimonials that the client has agreed to share.
 

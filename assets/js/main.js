@@ -3,7 +3,7 @@
   'use strict';
 
   /* ---- Loader: stays on screen for LOADER_MS, then fades out once the page has loaded ---- */
-  var LOADER_MS = 5000; // how long the loading screen shows, in milliseconds (5000 = 5 seconds)
+  var LOADER_MS = 2000; // how long the loading screen shows, in milliseconds (2000 = 2 seconds)
   var loader = document.querySelector('.loader');
   if (loader) {
     document.body.style.overflow = 'hidden';
