@@ -480,6 +480,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .cert-list strong { display: block; font-size: .95rem; }
 .cert-list span { font-size: .85rem; color: var(--muted); }
 .project .client { font-size: .88rem; color: var(--muted); }
+.portfolio-h2 { font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.2rem); margin: 12px 0 20px; max-width: 20ch; }
+.quick-facts { padding: 28px; }
+.quick-facts .facts { grid-template-columns: 1fr; gap: 18px; }
+.pillars { list-style: none; margin-top: 48px; }
+.pillar { padding: 28px; }
+.pillar-num { font-family: var(--font-head); font-style: italic; font-size: 1.4rem; color: var(--accent-text); }
+.pillar h3 { margin-top: 8px; font-size: 1.25rem; }
+.pillar p { margin-top: 8px; color: var(--muted); }
+.exp-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+.exp { padding: 24px 28px; }
+.exp-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+.exp-head h3 { font-size: 1.15rem; }
+.exp-date { font-family: var(--font-head); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-text); }
+.exp-org { margin-top: 4px; color: var(--muted); font-weight: 600; }
+.exp ul { margin-top: 12px; padding-left: 1.2em; display: grid; gap: 6px; color: var(--muted); }
 .project .by a { color: var(--brand); }
 
 /* ==========================================================================

@@ -5,7 +5,7 @@ A fast, plain HTML/CSS/JS website. There is **no build step**: upload the files 
 ```
 index.html          Home page (services, team cards, projects, contact …)
 team.html           Team page (all member cards, team skills, certifications)
-portfolio/          One portfolio page per team member (member-1.html … member-4.html)
+portfolio/          One portfolio page per team member (aman-varma.html, member-2.html … member-4.html)
 privacy.html        Privacy policy (template, fill in the [brackets])
 imprint.html        Imprint / Impressum (template, fill in the [brackets])
 404.html            "Page not found" page
@@ -33,15 +33,15 @@ Open `index.html` in any text editor (Notepad, VS Code) and change the words bet
 - **Team members (4 cards):** each person appears in three places, so update all three:
   1. their card in `index.html` (Team section),
   2. their card in `team.html`,
-  3. their own page, `portfolio/member-1.html` … `member-4.html` (name, role, introduction, about, experience, skills, certifications, projects, LinkedIn link).
+  3. their own page in `portfolio/` (`aman-varma.html`, `member-2.html` … `member-4.html`) (name, role, introduction, about, experience, skills, certifications, projects, LinkedIn link).
 
-  Search for `Team Member 1` (etc.) to find every spot. **Photos:** save a portrait (about 480×600 px) as `assets/img/team/member-1.jpg` (etc.), then follow the `EDIT photo:` comment next to each placeholder to swap in the `<img>` line. To rename a page (e.g. `portfolio/jane-doe.html`), rename the file and update the links on the cards.
+  Search for `Team Member 2` (etc.) to find every spot. **Photos:** save a portrait (about 480×600 px) as `assets/img/team/member-2.jpg` (etc.), then follow the `EDIT photo:` comment next to each placeholder to swap in the `<img>` line. To rename a page (e.g. `portfolio/jane-doe.html`, like `aman-varma.html`), rename the file and update the links on the cards.
 - **Projects:** the Projects section in `index.html` has four example cards ("Project name 1" …). Edit the title, summary, client description, technologies, the details under "Read project details", and which team member worked on it. Each person's page has its own project cards too. Only include client names, numbers or images the client has agreed to share.
 - **Skills and certifications** are on `team.html`. Each skill is one `<li class="chip">Skill</li>`; add or remove freely.
 
 ## Loading screen
 
-The Clover-X loader (from `brand/source/loader-ref.html`) shows for **2 seconds** each time a page opens (home, team and portfolio pages). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
+The Clover-X loader (from `brand/source/loader-ref.html`) shows for exactly **2 seconds** each time a page opens (home, team and portfolio pages). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
 
 Only add client names, logos, numbers or testimonials that the client has agreed to share.
 

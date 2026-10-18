@@ -2,25 +2,18 @@
 (function () {
   'use strict';
 
-  /* ---- Loader: stays on screen for LOADER_MS, then fades out once the page has loaded ---- */
+  /* ---- Loader: shows for exactly LOADER_MS from the moment the page starts loading ---- */
   var LOADER_MS = 2000; // how long the loading screen shows, in milliseconds (2000 = 2 seconds)
   var loader = document.querySelector('.loader');
   if (loader) {
     document.body.style.overflow = 'hidden';
-    var hideLoader = function () {
-      if (loader.classList.contains('is-done')) return;
+    // performance.now() counts from the moment the page started loading.
+    var elapsed = (window.performance && performance.now) ? performance.now() : 0;
+    setTimeout(function () {
       loader.classList.add('is-done');
       loader.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-    };
-    var afterLoad = function () {
-      // performance.now() counts from the moment the page started loading.
-      var elapsed = (window.performance && performance.now) ? performance.now() : LOADER_MS;
-      setTimeout(hideLoader, Math.max(0, LOADER_MS - elapsed));
-    };
-    if (document.readyState === 'complete') afterLoad();
-    else window.addEventListener('load', afterLoad);
-    setTimeout(hideLoader, LOADER_MS + 5000); // safety net if the load event never fires
+    }, Math.max(0, LOADER_MS - elapsed));
   }
 
   /* ---- Header: shadow on scroll + mobile menu ---- */
