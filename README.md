@@ -3,14 +3,14 @@
 A fast, plain HTML/CSS/JS website. There is **no build step**: upload the files to GitHub and the site is live.
 
 ```
-index.html          Home page (services, short team intro, projects, contact …)
-team.html           Team portfolio page (full profiles, skills, certifications)
+index.html          Home page (services, team highlights, projects, contact …)
+team.html           Team portfolio page (expertise, skills, certifications)
 privacy.html        Privacy policy (template, fill in the [brackets])
 imprint.html        Imprint / Impressum (template, fill in the [brackets])
 404.html            "Page not found" page
 assets/css/style.css   All styling. Colours are at the top.
 assets/js/main.js      Loader, mobile menu, project filter, contact form
-assets/img/            Logos, team photos, project images, social preview image
+assets/img/            Logos, social preview image; team/ and projects/ for future photos
 assets/fonts/          Outfit + Manrope, self-hosted (no Google connection, GDPR-friendly)
 brand/                 Logo deliverables (SVG + PNG), favicon set, source files
 scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo changes)
@@ -22,19 +22,14 @@ scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo cha
 2. **Contact email.** Search for `hello@clover-x.example` and replace it with your real address. This also switches on the contact form (see below).
 3. **Imprint and privacy policy.** Fill in every `[bracket]` in `imprint.html` and `privacy.html`, and have them checked by a legal professional. Both are required for a German business website.
 4. **Location.** The site says "Berlin, Germany". Change it in `index.html` if that's wrong.
-5. **Your title.** In `team.html`, add your title at Clover-X (look for the `EDIT:` comment).
-6. **Your domain in links.** `index.html`, `team.html`, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
+5. **Your domain in links.** `index.html`, `team.html`, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
 
 ## Editing text
 
 Open `index.html` in any text editor (Notepad, VS Code) and change the words between the tags. Each section starts with a comment like `<!-- ===== SERVICES ===== -->`, so you can find your way around. Lines marked `EDIT:` are the ones you will most likely want to change.
 
-- **Add a team member:** two steps.
-  1. In `team.html`, copy everything from `<article id="…" class="card profile"` to `</article>`, paste it underneath and change the details. Give it a new `id`, e.g. `id="jane-doe"`.
-  2. In `index.html` (Team section), copy one `<a class="card team-intro" …>…</a>` block, change the name, short intro and photo, and point its link at `team.html#jane-doe`.
-
-  Put photos in `assets/img/team/` (portrait, about 480×600 px, JPG or WebP).
-- **Add a project:** in the Work section, copy one `<li data-domains="…">…</li>` block. `data-domains` controls the filter buttons: use any of `security web-apps software communication`.
+- **Add a project:** the Work section in `index.html` contains a commented-out project template with instructions. Delete the "Case studies are on their way" box once your first project is in.
+- **Show individual team members (optional):** `team.html` contains a commented-out profile template. Put photos in `assets/img/team/` (portrait, about 480×600 px).
 - **Skills and certifications** are on `team.html`. Each skill is one `<li class="chip">Skill</li>`; add or remove freely.
 
 ## Loading screen

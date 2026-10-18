@@ -258,169 +258,87 @@
     </div>
   </section>
 
-  <!-- ===== TEAM (short intro; the full profiles live on team.html) ===== -->
+  <!-- ===== TEAM (short intro; more on team.html) ===== -->
   <section id="team" class="section" aria-labelledby="team-title">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Team</p>
         <h2 id="team-title">The people behind Clover&#8209;X</h2>
-        <p>Specialists you can actually talk to. Meet the team, see what we know and what we have built.</p>
+        <p>Specialists you can actually talk to, with certified expertise across identity, security and software.</p>
       </div>
-      <!-- TEAM INTRO CARD: copy this <a class="card team-intro">…</a> block for each new team member. -->
-      <div class="team-intros">
-        <a class="card team-intro" href="team.html#aman-varma">
-          <picture>
-            <source srcset="assets/img/team/aman-varma.webp" type="image/webp">
-            <img class="team-intro-photo" src="assets/img/team/aman-varma.jpg" alt="" width="96" height="120" loading="lazy">
-          </picture>
-          <div class="team-intro-body">
-            <h3>Aman Varma</h3>
-            <p class="role">Cybersecurity · Identity &amp; Access Management</p>
-            <p>Microsoft SC-300 certified, with enterprise experience in Entra ID, access governance and Zero Trust.</p>
-          </div>
-          <span class="team-intro-cta">View portfolio <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </a>
-      </div>
+      <ul class="grid grid-3 highlights">
+        <li class="card highlight">
+          <div class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></div>
+          <h3>Certified identity expertise</h3>
+          <p>Microsoft SC-300 certified, with hands-on enterprise experience in Entra ID, access reviews and Conditional Access.</p>
+        </li>
+        <li class="card highlight">
+          <div class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg></div>
+          <h3>Security and compliance focus</h3>
+          <p>Zero Trust, least-privilege access and audit-ready documentation, grounded in ISO/IEC 27001 and NIST.</p>
+        </li>
+        <li class="card highlight">
+          <div class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-software"/></svg></div>
+          <h3>Development across the stack</h3>
+          <p>Python, FastAPI, React, PostgreSQL and Azure, so we can build what off-the-shelf tools don't cover.</p>
+        </li>
+      </ul>
       <div class="team-more">
-        <a class="btn btn-primary" href="team.html">View full team portfolio <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-primary" href="team.html">View team portfolio <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- ===== WORK / PORTFOLIO ===== -->
-  <!-- PROJECT CARD: copy one <li data-domains="…">…</li> block to add a project.
-       data-domains can contain: security web-apps software communication (space separated). -->
+  <!-- ===== WORK / PROJECTS ===== -->
   <section id="work" class="section section-white" aria-labelledby="work-title">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Work</p>
-        <h2 id="work-title">Projects from our team</h2>
-        <p>Tools and labs our team has designed and built, with the code and write-ups to show how. Client case studies will be added here as projects complete.</p>
+        <h2 id="work-title">Projects</h2>
+        <p>Client case studies will appear here as projects complete. Some clients prefer to stay anonymous, so we describe the work rather than name names.</p>
       </div>
 
-      <div class="filters" role="group" aria-label="Filter projects by service" hidden>
-        <button class="btn btn-secondary btn-sm" type="button" aria-pressed="true" data-filter="all">All</button>
-        <button class="btn btn-secondary btn-sm" type="button" aria-pressed="false" data-filter="security">Security</button>
-        <button class="btn btn-secondary btn-sm" type="button" aria-pressed="false" data-filter="web-apps">Web Apps</button>
-        <button class="btn btn-secondary btn-sm" type="button" aria-pressed="false" data-filter="software">Software</button>
+      <!-- TO ADD PROJECTS: delete the "work-empty" block below, then copy this template into a
+           <ul class="grid grid-2 projects"> … </ul> list (one <li> per project).
+           Only include client names, numbers or images the client has agreed to share.
+
+        <li data-domains="security">
+          <article class="card project">
+            <div class="project-cover" aria-hidden="true"><span class="project-tag">Short label</span><svg class="icon"><use href="#i-security"/></svg></div>
+            <div class="project-body">
+              <p class="project-meta"><span>Security</span><span>2026</span></p>
+              <h3>Project title</h3>
+              <p class="summary">One sentence on the problem and the result.</p>
+              <p class="by">Client: Regional logistics company</p>
+              <ul class="chips"><li class="chip">Technology</li><li class="chip">Technology</li></ul>
+            </div>
+            <details class="case">
+              <summary>Read case study <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="case-body">
+                <div><h4>Problem</h4><p>…</p></div>
+                <div><h4>Approach</h4><p>…</p></div>
+                <div><h4>Result</h4><p>…</p></div>
+              </div>
+            </details>
+          </article>
+        </li>
+
+        For filter buttons, add this above the list:
+        <div class="filters" role="group" aria-label="Filter projects by service" hidden>
+          <button class="btn btn-secondary btn-sm" type="button" aria-pressed="true" data-filter="all">All</button>
+          <button class="btn btn-secondary btn-sm" type="button" aria-pressed="false" data-filter="security">Security</button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-filter-status></p>
+      -->
+
+      <div class="card work-empty">
+        <div class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
+        <div>
+          <h3>Case studies are on their way</h3>
+          <p>Ask us about relevant experience for your project and we will happily walk you through how we would approach it.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Talk to us <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-
-      <ul class="grid grid-2 projects">
-        <li data-domains="security software">
-          <article class="card project">
-            <div class="project-cover" aria-hidden="true"><span class="project-tag">Identity governance</span><svg class="icon"><use href="#i-security"/></svg></div>
-            <div class="project-body">
-              <p class="project-meta"><span>Security</span><span>Software</span><span>2026 – present</span></p>
-              <h3>AccessPilot: identity governance platform</h3>
-              <p class="summary">A governance layer over Entra ID, Okta and Active Directory that controls who has access to what, for how long, and under whose approval.</p>
-              <p class="by">Aman Varma · personal project</p>
-              <ul class="chips"><li class="chip">Python / FastAPI</li><li class="chip">PostgreSQL</li><li class="chip">React / TypeScript</li><li class="chip">Graph API</li><li class="chip">Okta</li><li class="chip">LDAPS</li></ul>
-              <div class="project-links">
-                <a class="btn btn-secondary btn-sm" href="https://github.com/Amancs1541/AccessPiliot" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<span class="visually-hidden"> for AccessPilot on GitHub (opens in new tab)</span></a>
-                <a class="btn btn-ghost btn-sm" href="https://amancs1541.github.io/my-portfolio/accesspilot.html" target="_blank" rel="noopener">Architecture reference<span class="visually-hidden"> (opens in new tab)</span> <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-              </div>
-            </div>
-            <details class="case">
-              <summary>Read case study<span class="visually-hidden">: AccessPilot</span> <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-              <div class="case-body">
-                <div><h4>Problem</h4><p>Directories like Entra ID, Okta or Active Directory handle authentication, but none provides an end-to-end request, approval, activation, expiry and review lifecycle across several directories.</p></div>
-                <div><h4>Approach</h4><p>FastAPI backend with PostgreSQL and a React/TypeScript frontend. One shared connector interface for Entra ID (Graph API), Okta, Active Directory (LDAPS) and CSV/HR feeds, with a joiner-mover-leaver engine, access packages, business roles, multi-stage approvals, separation of duties, access reviews and audit logging on top.</p></div>
-                <div><h4>Result</h4><p>A working governance platform with HR sync, multi-directory provisioning, self-healing background workers and break-glass access, documented in a full architecture reference.</p></div>
-                <figure>
-                  <img src="assets/img/projects/accesspilot-architecture.webp" alt="AccessPilot architecture: React client signs in through Entra ID, calls a FastAPI backend with a custom privileged-access logic layer and background workers, backed by PostgreSQL." width="1200" height="1118" loading="lazy" decoding="async">
-                  <figcaption>Infrastructure overview</figcaption>
-                </figure>
-              </div>
-            </details>
-          </article>
-        </li>
-
-        <li data-domains="security web-apps">
-          <article class="card project">
-            <div class="project-cover" aria-hidden="true"><span class="project-tag">Email security</span><svg class="icon"><use href="#i-mail"/></svg></div>
-            <div class="project-body">
-              <p class="project-meta"><span>Security</span><span>Web Apps</span><span>2025</span></p>
-              <h3>PhishIntel Analyzer</h3>
-              <p class="summary">A web app that scores suspicious .eml files by combining an NLP model, rule-based heuristics and threat-intelligence lookups.</p>
-              <p class="by">Aman Varma · security project</p>
-              <ul class="chips"><li class="chip">Python</li><li class="chip">Flask</li><li class="chip">NLP</li><li class="chip">Threat intelligence</li></ul>
-              <div class="project-links">
-                <a class="btn btn-secondary btn-sm" href="https://github.com/Amancs1541/PhishIntel-Analyzer-.git" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<span class="visually-hidden"> for PhishIntel Analyzer on GitHub (opens in new tab)</span></a>
-                <a class="btn btn-ghost btn-sm" href="https://medium.com/@amanvarma.clover/phishintel-analyzer-project-for-detecting-phishing-emails-8cef009f7450" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-article"/></svg>Article<span class="visually-hidden"> on Medium (opens in new tab)</span></a>
-              </div>
-            </div>
-            <details class="case">
-              <summary>Read case study<span class="visually-hidden">: PhishIntel Analyzer</span> <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-              <div class="case-body">
-                <div><h4>Problem</h4><p>Assessing suspicious emails quickly and explainably needs more than a single detection method.</p></div>
-                <div><h4>Approach</h4><p>A Flask app that parses .eml files and combines three methods: a pre-trained NLP model, rule-based header and URL heuristics, and threat-intelligence integration.</p></div>
-                <div><h4>Result</h4><p>Each email is scored using all three methods, documented in an article and a project report.</p></div>
-                <figure>
-                  <img src="assets/img/projects/phishintel-pipeline.webp" alt="PhishIntel pipeline: email input, preprocessing, NLP analysis, header and URL analysis, threat intelligence, scoring and decision engine, output." width="1200" height="409" loading="lazy" decoding="async">
-                  <figcaption>Analysis pipeline</figcaption>
-                </figure>
-              </div>
-            </details>
-          </article>
-        </li>
-
-        <li data-domains="security web-apps">
-          <article class="card project">
-            <div class="project-cover" aria-hidden="true"><span class="project-tag">Monitoring</span><svg class="icon"><use href="#i-search"/></svg></div>
-            <div class="project-body">
-              <p class="project-meta"><span>Security</span><span>Web Apps</span><span>2025</span></p>
-              <h3>LogSentinel</h3>
-              <p class="summary">A log analysis platform that helps small businesses monitor server and sign-in logs and spot suspicious activity without a security team.</p>
-              <p class="by">Aman Varma · security project</p>
-              <ul class="chips"><li class="chip">Python</li><li class="chip">Flask</li><li class="chip">Log analysis</li><li class="chip">SQLite</li></ul>
-              <div class="project-links">
-                <a class="btn btn-secondary btn-sm" href="https://github.com/Amancs1541/LogSentinal.git" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<span class="visually-hidden"> for LogSentinel on GitHub (opens in new tab)</span></a>
-              </div>
-            </div>
-            <details class="case">
-              <summary>Read case study<span class="visually-hidden">: LogSentinel</span> <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-              <div class="case-body">
-                <div><h4>Problem</h4><p>Small businesses rarely have the security expertise to make sense of server and authentication logs.</p></div>
-                <div><h4>Approach</h4><p>A web-based platform that ingests logs, detects suspicious activity and visualises security-relevant patterns.</p></div>
-                <div><h4>Result</h4><p>Security-relevant anomalies become visible without deep cybersecurity know-how.</p></div>
-                <figure>
-                  <img src="assets/img/projects/logsentinel-sequence.webp" alt="LogSentinel sequence: the user uploads a log file, the Flask backend parses and validates it, runs anomaly detection, stores results and displays them." width="981" height="496" loading="lazy" decoding="async">
-                  <figcaption>Log analysis sequence</figcaption>
-                </figure>
-              </div>
-            </details>
-          </article>
-        </li>
-
-        <li data-domains="web-apps security">
-          <article class="card project">
-            <div class="project-cover" aria-hidden="true"><span class="project-tag">Cloud identity</span><svg class="icon"><use href="#i-web"/></svg></div>
-            <div class="project-body">
-              <p class="project-meta"><span>Web Apps</span><span>Security</span><span>Azure lab</span></p>
-              <h3>Secure web app with Entra ID</h3>
-              <p class="summary">A Node.js app on Azure App Service that only explicitly assigned users can reach, with sign-in handled by Entra ID instead of custom login code.</p>
-              <p class="by">Aman Varma · lab project</p>
-              <ul class="chips"><li class="chip">Azure App Service</li><li class="chip">Entra ID</li><li class="chip">Easy Auth</li><li class="chip">Node.js</li><li class="chip">RBAC</li></ul>
-              <div class="project-links">
-                <a class="btn btn-ghost btn-sm" href="https://medium.com/@amanvarma.clover/simple-azure-service-entra-id-app-registration-project-2e3ed322a7e2" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-article"/></svg>Step-by-step article<span class="visually-hidden"> on Medium (opens in new tab)</span></a>
-              </div>
-            </div>
-            <details class="case">
-              <summary>Read case study<span class="visually-hidden">: Secure web app with Entra ID</span> <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-              <div class="case-body">
-                <div><h4>Problem</h4><p>A web app had to be reachable only by explicitly assigned users, without writing custom login code.</p></div>
-                <div><h4>Approach</h4><p>Deployed to Azure App Service with authentication through Entra ID (Easy Auth), an App Registration and an Enterprise Application with user assignment required.</p></div>
-                <div><h4>Result</h4><p>Access limited to assigned users, documented as a step-by-step article.</p></div>
-                <figure>
-                  <img src="assets/img/projects/azure-entra-architecture.webp" alt="Architecture: the user opens the web app on Azure App Service, which redirects to Entra ID for sign-in and checks the user's assignment before allowing access." width="607" height="418" loading="lazy" decoding="async">
-                  <figcaption>Simple architecture: Azure + Entra ID</figcaption>
-                </figure>
-              </div>
-            </details>
-          </article>
-        </li>
-      </ul>
-      <p class="visually-hidden" aria-live="polite" data-filter-status></p>
     </div>
   </section>
 

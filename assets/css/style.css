@@ -347,6 +347,19 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .certs .icon { color: var(--accent-text); }
 .certs strong { display: block; font-size: .95rem; line-height: 1.35; }
 .certs span { font-size: .85rem; color: var(--muted); }
+/* Team highlights (home page) */
+.highlights { list-style: none; }
+.highlight { padding: 28px; }
+.highlight h3 { margin-top: 20px; font-size: 1.2rem; }
+.highlight p { margin-top: 8px; color: var(--muted); }
+
+/* Work section before case studies exist */
+.work-empty { display: grid; gap: 20px; padding: 28px; align-items: center; }
+@media (min-width: 768px) { .work-empty { grid-template-columns: auto 1fr auto; padding: 32px 36px; } }
+.work-empty h3 { font-size: 1.25rem; }
+.work-empty p { margin-top: 6px; color: var(--muted); max-width: 560px; }
+.work-empty .btn { justify-self: start; }
+
 /* Short team intro on the home page (full profiles are on team.html) */
 .team-intros { display: grid; gap: 20px; }
 @media (min-width: 1024px) { .team-intros { grid-template-columns: repeat(2, 1fr); } }
