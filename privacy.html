@@ -11,8 +11,25 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Enables the loader and other JavaScript-only features.
+    document.documentElement.classList.add('js');
+  </script>
 </head>
 <body>
+<!-- ===== LOADER (shown for 2 seconds on page load; change LOADER_MS in assets/js/main.js) ===== -->
+<div class="loader" role="status" aria-live="polite" aria-label="Loading">
+  <span class="mark-spin" style="--s: min(180px, 46vw)">
+    <img class="ghost" src="assets/img/brand/clover-x-mark-dark.svg" alt="" width="1220" height="1168">
+    <img class="lit" src="assets/img/brand/clover-x-mark-dark.svg" alt="" width="1220" height="1168">
+  </span>
+  <img class="loader-word" src="assets/img/brand/clover-x-wordmark-dark.svg" alt="Clover-X" width="240" height="31">
+  <div class="loader-status">
+    <div class="loader-label">Loading<span class="dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span></div>
+    <div class="loader-bar" aria-hidden="true"></div>
+  </div>
+</div>
+
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-bar">
@@ -84,5 +101,6 @@
     <ul><li><a href="privacy.html" aria-current="page">Privacy policy</a></li><li><a href="imprint.html">Imprint</a></li></ul>
   </div>
 </footer>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

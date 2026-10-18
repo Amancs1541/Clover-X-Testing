@@ -41,7 +41,7 @@ Open `index.html` in any text editor (Notepad, VS Code) and change the words bet
 
 ## Loading screen
 
-The Clover-X loader (from `brand/source/loader-ref.html`) shows for exactly **2 seconds** each time a page opens (home, team and portfolio pages). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
+The Clover-X loader (from `brand/source/loader-ref.html`) shows for exactly **2 seconds** each time any page opens (every page, including privacy, imprint and 404). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
 
 Only add client names, logos, numbers or testimonials that the client has agreed to share.
 
