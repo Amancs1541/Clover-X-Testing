@@ -13,8 +13,8 @@ assets/css/style.css   All styling. Colours are at the top.
 assets/js/main.js      Loader, mobile menu, project filter, contact form
 assets/img/            Logos, social preview image; put team photos in team/ and project images in projects/
 assets/fonts/          Outfit + Manrope, self-hosted (no Google connection, GDPR-friendly)
-brand/                 Logo deliverables (SVG + PNG), favicon set, source files
-scripts/build-brand.mjs  Regenerates logos/favicons (only needed if the logo changes)
+brand/                 Logo deliverables (SVG + PNG), favicon set, source files  (local only, not uploaded)
+scripts/build-brand.mjs  Regenerates logos/favicons, only if the logo changes  (local only, not uploaded)
 ```
 
 ## Before you launch: checklist
@@ -72,7 +72,7 @@ Built in: a hidden "honeypot" spam trap, friendly validation messages, a require
 ## Publishing on GitHub Pages
 
 1. Create a repository on GitHub (e.g. `clover-x-website`).
-2. Upload everything in this folder **except** `node_modules/` (it is listed in `.gitignore`, so `git push` skips it automatically).
+2. Upload the folder with `git push`. Files listed in `.gitignore` (`brand/`, `scripts/`, `package.json`, `node_modules/` …) stay on your computer and are skipped automatically. If you upload by drag-and-drop on github.com instead, leave those out yourself.
 3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main`, folder `/ (root)`** → Save.
 4. After a minute the site is live at `https://<your-username>.github.io/<repository>/`.
 
@@ -81,6 +81,8 @@ All links in the site are relative, so it works at that address and on your own 
 **Your own domain (recommended):** in **Settings → Pages → Custom domain**, enter e.g. `www.clover-x.de`. Then, at your domain provider, add a `CNAME` record pointing `www` to `<your-username>.github.io`. When the check passes, tick **Enforce HTTPS**.
 
 ## Logo and brand files (`brand/`)
+
+This folder is kept on your computer only (it is in `.gitignore`). **Back it up**, e.g. to cloud storage: it holds the logo files and your original reference files.
 
 | File | Use |
 |---|---|

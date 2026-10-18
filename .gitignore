@@ -1,3 +1,21 @@
+# Files kept on your computer but NOT uploaded to GitHub.
+# The website only needs: the .html pages, assets/, portfolio/, the icons,
+# robots.txt, sitemap.xml, site.webmanifest and .nojekyll.
+
+# Logo deliverables and original reference files (keep a backup of this folder!)
+brand/
+
+# Logo/favicon generator tool (only needed if the logo changes)
+scripts/
+package.json
+package-lock.json
 node_modules/
+
+# Not used by the site (a copy is in brand/png/)
+favicon-32x32.png
+
+# System files
 .DS_Store
 Thumbs.db
+desktop.ini
+.vscode/
