@@ -446,6 +446,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: radial-gradient(circle at 80% 15%, rgba(92, 208, 194, .2), transparent 55%), repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 1px, transparent 1px 14px), var(--deep);
 }
 .member-photo-placeholder .icon { width: 35%; height: 35%; stroke-width: 1.1; opacity: .8; }
+.member-initials { font-family: var(--font-head); font-weight: 500; font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem); letter-spacing: .08em; color: var(--mint); }
+.members-compact .member-initials { font-size: 2.5rem; }
+@media (max-width: 559px) { .members:not(.members-compact) .member-initials { font-size: 1.8rem; } }
 .member-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .member-body h3 { font-size: 1.2rem; }
 .member-body .role { color: var(--accent-text); font-weight: 700; font-size: .92rem; margin-top: -4px; }
