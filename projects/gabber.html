@@ -228,38 +228,14 @@
     </ul>
   </section>
 
-  <!-- How it's built -->
-  <section class="section section-white" aria-labelledby="gb-tech-title">
+  <!-- Trust & safety -->
+  <section class="section section-white" aria-labelledby="gb-trust-title">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">How it's built</p>
-        <h2 id="gb-tech-title">Production-grade from day one.</h2>
-        <p>Gabber runs on a containerised backend with automated testing and a staged release pipeline, so every change is tested once and promoted, not rebuilt.</p>
+        <p class="eyebrow">Trust &amp; safety</p>
+        <h2 id="gb-trust-title">Built to be trusted.</h2>
       </div>
-      <ul class="grid grid-3 tech-grid">
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-software"/></svg><div><strong>Android app</strong><span>The Gabber client, in beta testing</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-build"/></svg><div><strong>Node.js 22 API</strong><span>Backend for chat, calls, discovery and business</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg><div><strong>PostgreSQL 16</strong><span>Primary database, with versioned migrations</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg><div><strong>Redis 7</strong><span>Fast caching and real-time state</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><strong>JWT authentication</strong><span>Signed tokens for every session</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><div><strong>MSG91</strong><span>SMS one-time passwords for sign-in</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Cashfree</strong><span>Secure in-chat payments for businesses</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-web"/></svg><div><strong>Docker &amp; NGINX</strong><span>Containerised backend and website</span></div></li>
-        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg><div><strong>Secrets per environment</strong><span>Keys injected at runtime, never baked into images</span></div></li>
-      </ul>
-
-      <h3 class="sub-title" style="margin-top:56px">Release pipeline (GitHub Actions)</h3>
-      <ol class="pipeline" aria-label="Release pipeline stages">
-        <li><span class="stage">Test</span><small>Migrations + unit &amp; database tests on PostgreSQL and Redis</small></li>
-        <li><span class="stage">Lint &amp; validate</span><small>Code style and website link checks</small></li>
-        <li><span class="stage">Build once</span><small>Docker images pushed to GitHub Container Registry</small></li>
-        <li><span class="stage env">DEV</span><small>Automatic</small></li>
-        <li><span class="stage env">UAT</span><small>After approval</small></li>
-        <li><span class="stage env prod">PROD</span><small>After approval</small></li>
-      </ol>
-      <p class="pipeline-note">The image tested in DEV is the exact image released to PROD: it is re-tagged per environment, never rebuilt.</p>
-
-      <div class="trust-row">
+      <div class="trust-row" style="margin-top:0">
         <div class="card trust"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg><div><strong>Privacy-ready</strong><span>Privacy policy, terms, support and in-app account deletion pages, as required for the Google Play listing.</span></div></div>
         <div class="card trust"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Official builds only</strong><span>The download link will be published here when the signed Android build is ready. Never install Gabber from an unofficial link.</span></div></div>
       </div>
@@ -419,5 +395,6 @@
 </footer>
 
 <script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/widgets.js" defer></script>
 </body>
 </html>
