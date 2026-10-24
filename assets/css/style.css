@@ -462,6 +462,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .members:not(.members-compact) .chips li:nth-child(n+3) { display: none; }
 }
 .members-compact .member-photo { aspect-ratio: 16 / 9; }
+@media (min-width: 768px) { .members-duo { max-width: 760px; } }
 
 .portfolio-hero { padding: clamp(40px, 7vw, 88px) 0; }
 .portfolio-hero-inner { position: relative; display: grid; gap: 28px; align-items: center; }

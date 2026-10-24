@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.clover-x.example/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.clover-x.example/team.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.clover-x.example/portfolio/aman-varma.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.clover-x.example/portfolio/nihar-mehta.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.clover-x.example/portfolio/member-3.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.clover-x.example/portfolio/member-4.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.clover-x.example/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://www.clover-x.example/imprint.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://clover-x.in/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://clover-x.in/team.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://clover-x.in/portfolio/aman-varma.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://clover-x.in/portfolio/nihar-mehta.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://clover-x.in/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://clover-x.in/imprint.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

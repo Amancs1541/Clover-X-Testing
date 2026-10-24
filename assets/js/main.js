@@ -99,12 +99,10 @@
       label.textContent = 'Sending';
       errorBox.hidden = true;
 
-      // FormSubmit's AJAX endpoint is the form's action with /ajax/ added.
-      var endpoint = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-      fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
-        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
-        .then(function (r) {
-          if (!r.ok || String(r.data.success) !== 'true') throw new Error(r.data.message || 'Failed');
+      // Send to Formspree (the form's action) and stay on the page.
+      fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Formspree returned ' + res.status);
           var success = form.parentElement.querySelector('.form-success');
           form.hidden = true;
           success.hidden = false;

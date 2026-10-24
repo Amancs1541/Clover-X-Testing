@@ -1,49 +1,51 @@
 # Clover-X website
 
+The website of Clover-X, Gujarat, India: **https://clover-x.in/** · contact: **info@clover-x.in**
+
 A fast, plain HTML/CSS/JS website. There is **no build step**: upload the files to GitHub and the site is live.
 
 ```
-index.html          Home page (services, team cards, projects, contact …)
-team.html           Team page (all member cards, team skills, certifications)
-portfolio/          One portfolio page per team member (aman-varma.html, nihar-mehta.html, member-3.html, member-4.html)
-privacy.html        Privacy policy (template, fill in the [brackets])
-imprint.html        Imprint / Impressum (template, fill in the [brackets])
+index.html          Home page (services, team cards, projects, contact form)
+team.html           Team page (all member cards)
+portfolio/          One portfolio page per team member (aman-varma.html, nihar-mehta.html)
+privacy.html        Privacy policy (India, DPDP Act 2023)
+imprint.html        Legal notice
 404.html            "Page not found" page
 assets/css/style.css   All styling. Colours are at the top.
 assets/js/main.js      Loader, mobile menu, project filter, contact form
-assets/img/            Logos, social preview image; put team photos in team/ and project images in projects/
-assets/fonts/          Outfit + Manrope, self-hosted (no Google connection, GDPR-friendly)
+assets/img/            Logos, social preview image, team photos (team/), project diagrams (projects/)
+assets/fonts/          Outfit + Manrope, self-hosted (no Google connection)
 brand/                 Logo deliverables (SVG + PNG), favicon set, source files  (local only, not uploaded)
 scripts/build-brand.mjs  Regenerates logos/favicons, only if the logo changes  (local only, not uploaded)
 ```
 
-## Before you launch: checklist
-
-1. **Your web address.** Search all files for `https://www.clover-x.example/` and replace it with the real address (e.g. `https://www.clover-x.de/`). It appears in `index.html`, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml`.
-2. **Contact email.** Search for `hello@clover-x.example` and replace it with your real address. This also switches on the contact form (see below).
-3. **Imprint and privacy policy.** Fill in every `[bracket]` in `imprint.html` and `privacy.html`, and have them checked by a legal professional. Both are required for a German business website.
-4. **Location.** The site says "Berlin, Germany". Change it in `index.html` if that's wrong.
-5. **Your domain in links.** `index.html`, `team.html`, the `portfolio/` pages, `privacy.html`, `imprint.html`, `robots.txt` and `sitemap.xml` all contain the placeholder address.
-6. **Team and projects.** Replace the placeholder names, photos and project texts (see below).
-
 ## Editing text
 
-Open `index.html` in any text editor (Notepad, VS Code) and change the words between the tags. Each section starts with a comment like `<!-- ===== SERVICES ===== -->`, so you can find your way around. Lines marked `EDIT:` are the ones you will most likely want to change.
+Open any `.html` file in a text editor (Notepad, VS Code) and change the words between the tags. Each section starts with a comment like `<!-- ===== SERVICES ===== -->`, so you can find your way around.
 
-- **Team members (4 cards):** each person appears in three places, so update all three:
+- **Team members:** each person appears in three places, so update all three:
   1. their card in `index.html` (Team section),
   2. their card in `team.html`,
-  3. their own page in `portfolio/` (`aman-varma.html`, `nihar-mehta.html`, `member-3.html`, `member-4.html`) (name, role, introduction, about, experience, skills, certifications, projects, LinkedIn link).
+  3. their own page in `portfolio/`.
 
-  Search for `Team Member 3` (etc.) to find every spot. **Photos:** save a portrait (about 480×600 px) as `assets/img/team/member-3.jpg` (etc.; for Nihar: `nihar-mehta.jpg`), then follow the `EDIT photo:` comment next to each placeholder to swap in the `<img>` line. To rename a page (e.g. `portfolio/jane-doe.html`, like `aman-varma.html`), rename the file and update the links on the cards.
-- **Projects:** the Projects section in `index.html` has four example cards ("Project name 1" …). Edit the title, summary, client description, technologies, the details under "Read project details", and which team member worked on it. Each person's page has its own project cards too. Only include client names, numbers or images the client has agreed to share.
-- **Skills and certifications** are on `team.html`. Each skill is one `<li class="chip">Skill</li>`; add or remove freely.
+  **Nihar's photo:** save a portrait (about 480×600 px) as `assets/img/team/nihar-mehta.jpg`, then follow the `EDIT photo:` comment next to the "NM" placeholder (3 places) to swap in the `<img>` line.
+
+- **Adding a new team member:** copy `portfolio/nihar-mehta.html` to e.g. `portfolio/first-last.html` and change its content; then copy a card `<li>…</li>` in `index.html` and `team.html`, point it at the new page, and add the new card to the "Also on the team" list on the other portfolio pages. Add the page to `sitemap.xml`.
+- **Projects:** the Projects section in `index.html` shows six projects copied from the team's portfolio pages, each credited to its author. Copy a `<li data-domains="…">…</li>` block to add one; `data-domains` controls the filter buttons (`security`, `web-apps`, `software`, `communication`). Only include client names, logos or numbers that the client has agreed to share.
 
 ## Loading screen
 
-The Clover-X loader (from `brand/source/loader-ref.html`) shows for exactly **2 seconds** each time any page opens (every page, including privacy, imprint and 404). To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds). It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
+The Clover-X loader (from `brand/source/loader-ref.html`) shows for exactly **2 seconds** each time any page opens. To change the time, edit `LOADER_MS` at the top of `assets/js/main.js` (milliseconds, e.g. `3000` = 3 seconds); the 404 page has its own `2000` near the bottom of `404.html`. It is skipped automatically if JavaScript is off, and its animation stops for visitors who turn on "reduce motion".
 
-Only add client names, logos, numbers or testimonials that the client has agreed to share.
+## Contact form
+
+The form is connected to **Formspree** (form ID `mdeekrwv`, endpoint `https://formspree.io/f/mdeekrwv`). Messages are emailed to the address of the Formspree account and are also listed in the Formspree dashboard.
+
+- Free plan: 50 submissions per month. Upgrade in Formspree if you need more.
+- In the Formspree dashboard you can change the email address messages go to, turn on reCAPTCHA, and restrict the form to your domain (`clover-x.in`) so it can't be used from other sites.
+- Built in: a hidden "honeypot" spam trap (`_gotcha`), friendly validation messages, a required consent checkbox linking to the privacy policy, a loading state on the button and an on-page success message.
+
+**After publishing, send one test message from the live site** to confirm it arrives.
 
 ## Changing colours
 
@@ -59,16 +61,6 @@ Open `assets/css/style.css`. The first block (`:root { … }`) holds every colou
 
 All text colours meet WCAG AA contrast (4.5:1). If you change them, check contrast with a tool like webaim.org/resources/contrastchecker.
 
-## Contact form
-
-The form sends messages to your inbox through **FormSubmit** (formsubmit.co), a free service that works on static sites such as GitHub Pages. No account is needed.
-
-1. In `index.html`, change `action="https://formsubmit.co/hello@clover-x.example"` to your email address.
-2. Publish the site, then send one test message from the live site.
-3. FormSubmit emails you an activation link. Click it once. Every message after that arrives in your inbox.
-
-Built in: a hidden "honeypot" spam trap, friendly validation messages, a required GDPR consent checkbox linking to the privacy policy, a loading state on the button and an on-page success message.
-
 ## Publishing on GitHub Pages
 
 1. Create a repository on GitHub (e.g. `clover-x-website`).
@@ -76,9 +68,17 @@ Built in: a hidden "honeypot" spam trap, friendly validation messages, a require
 3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main`, folder `/ (root)`** → Save.
 4. After a minute the site is live at `https://<your-username>.github.io/<repository>/`.
 
-All links in the site are relative, so it works at that address and on your own domain.
+**Connecting clover-x.in:** in **Settings → Pages → Custom domain**, enter `clover-x.in` and save. At your domain provider, add these DNS records:
 
-**Your own domain (recommended):** in **Settings → Pages → Custom domain**, enter e.g. `www.clover-x.de`. Then, at your domain provider, add a `CNAME` record pointing `www` to `<your-username>.github.io`. When the check passes, tick **Enforce HTTPS**.
+| Type | Name | Value |
+|---|---|---|
+| `A` | `@` | `185.199.108.153` |
+| `A` | `@` | `185.199.109.153` |
+| `A` | `@` | `185.199.110.153` |
+| `A` | `@` | `185.199.111.153` |
+| `CNAME` | `www` | `<your-username>.github.io` |
+
+When GitHub's DNS check passes, tick **Enforce HTTPS**. The page addresses in the HTML, `sitemap.xml` and `robots.txt` already use `https://clover-x.in/`.
 
 ## Logo and brand files (`brand/`)
 
@@ -95,10 +95,10 @@ This folder is kept on your computer only (it is in `.gitignore`). **Back it up*
 
 **Usage rules:** keep clear space around the logo equal to the height of one petal. The full logo must be at least **120 px wide** and the mark at least **32 px**. Don't recolour, stretch or add effects.
 
-**About these files:** the logo was supplied only as PNGs (`source/logo.png` for the mark, and the wordmark embedded in `source/loader-ref.html`). The SVGs here are careful vector traces of those PNGs, checked against the originals at 400% (`check/`). They are sharp at all web sizes. For print or very large signage, ask the designer for the original vector file and replace these.
+**About these files:** the logo was supplied only as PNGs. The SVGs here are careful vector traces, checked against the originals at 400% (`check/`). They are sharp at all web sizes. For print or very large signage, ask the designer for the original vector file.
 
 **Regenerating** (only if the logo source changes): install Node.js, then run `npm install` and `npm run brand` in this folder.
 
 ## Privacy notes
 
-The site sets no cookies, uses no analytics and loads no third-party fonts or scripts, so **no cookie banner is needed**. If you later add analytics, embedded videos, maps or chat widgets, you will need a consent banner and an updated privacy policy.
+The site sets no cookies, uses no analytics and loads no third-party fonts or scripts, so **no cookie banner is needed**. The only outside services are GitHub Pages (hosting) and Formspree (contact form), both named in `privacy.html`. If you later add analytics, embedded videos, maps or chat widgets, add a consent banner and update the privacy policy.
