@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabber: Chat. Call. Discover. | Clover-X</title>
+  <meta name="description" content="Gabber by Clover-X brings messaging, voice and video calls, groups, status updates and local business discovery into one Android app made in India.">
+  <link rel="canonical" href="https://clover-x.in/projects/gabber.html">
+  <meta name="theme-color" content="#0f2b36">
+
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clover-X">
+  <meta property="og:title" content="Gabber: Chat. Call. Discover.">
+  <meta property="og:description" content="Messaging, calls, groups, status and local business discovery in one app made in India.">
+  <meta property="og:url" content="https://clover-x.in/projects/gabber.html">
+  <meta property="og:image" content="https://clover-x.in/assets/img/projects/gabber/inbox.webp">
+  <meta property="og:image:width" content="540">
+  <meta property="og:image:height" content="1201">
+  <meta property="og:image:alt" content="The Gabber app inbox">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gabber: Chat. Call. Discover.">
+  <meta name="twitter:description" content="Messaging, calls, groups, status and local business discovery in one app made in India.">
+  <meta name="twitter:image" content="https://clover-x.in/assets/img/projects/gabber/inbox.webp">
+
+  <link rel="preload" href="../assets/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    // Enables the loader and other JavaScript-only features.
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+<body>
+
+<!-- ===== ICONS (line icons, used with <svg class="icon"><use href="#i-name"/></svg>) ===== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-security" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.3-4.4"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M7.5 13.5h5M7.5 16h9"/><circle cx="6.5" cy="6.75" r=".6"/><circle cx="8.8" cy="6.75" r=".6"/></symbol>
+  <symbol id="i-software" viewBox="0 0 24 24"><path d="m8.5 8-4.5 4 4.5 4M15.5 8l4.5 4-4.5 4M13.5 5.5l-3 13"/></symbol>
+  <symbol id="i-comms" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h7A2.5 2.5 0 0 1 16 6.5v4a2.5 2.5 0 0 1-2.5 2.5H9l-3.5 3v-3h-.5A1 1 0 0 1 4 12V6.5Z"/><path d="M19 9.5a2 2 0 0 1 1 1.75v3.25a2 2 0 0 1-2 2h-.5V19L15 16.5h-3.5a2 2 0 0 1-1.6-.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.5 8.5 4.5-8.5 4.5L3.5 8 12 3.5Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5M3.5 16l8.5 4.5 8.5-4.5"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M4 20v-6M10 20V10M16 20V6M14.5 5l5-1.5L21 8.5M3 20.5h18"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M20 12.5a7.5 7.5 0 0 1-10.9 6.7L4 20.5l1.3-4.6A7.5 7.5 0 1 1 20 12.5Z"/><path d="M9 11h6M9 14h4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="m14.5 5.5 4 4L9 19H5v-4l9.5-9.5ZM12.5 7.5l4 4"/></symbol>
+  <symbol id="i-build" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5l-5 5a1.4 1.4 0 0 0 2 2l5-5a4 4 0 0 0 5-5.4l-2.5 2.5-2.2-.4-.4-2.2 2.5-2.5Z"/></symbol>
+  <symbol id="i-support" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="m6 6 3.5 3.5M14.5 14.5 18 18M18 6l-3.5 3.5M9.5 14.5 6 18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.3-1.5 7.2 5-2.7 5 2.7-1.5-7.2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.5 1-2.5 2.3-2.5S16 11.3 16 13v3"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.2-4-2-5.5-2.5M14.5 21v-3.2a2.8 2.8 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6 2.9 5 3.2 5 3.2a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 3.6 9.6c0 4.6 2.8 5.7 5.5 6a2.8 2.8 0 0 0-.8 2.2V21"/></symbol>
+  <symbol id="i-article" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+</svg>
+
+<!-- ===== LOADER (shown for 2 seconds on page load; change LOADER_MS in assets/js/main.js) ===== -->
+<div class="loader" role="status" aria-live="polite" aria-label="Loading">
+  <span class="mark-spin" style="--s: min(180px, 46vw)">
+    <img class="ghost" src="../assets/img/brand/clover-x-mark-dark.svg" alt="" width="1220" height="1168">
+    <img class="lit" src="../assets/img/brand/clover-x-mark-dark.svg" alt="" width="1220" height="1168">
+  </span>
+  <img class="loader-word" src="../assets/img/brand/clover-x-wordmark-dark.svg" alt="Clover-X" width="240" height="31">
+  <div class="loader-status">
+    <div class="loader-label">Loading<span class="dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span></div>
+    <div class="loader-bar" aria-hidden="true"></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-bar">
+    <a class="brand-link" href="../" aria-label="Clover-X home">
+      <img src="../assets/img/brand/clover-x-logo-dark.svg" alt="Clover-X" width="120" height="92">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#why">Why Clover-X</a></li>
+        <li><a href="../#process">Process</a></li>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../#work" aria-current="page">Projects</a></li>
+        <li><a href="../#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="../#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="product-page">
+  <!-- ============================================================
+       PRODUCT PAGE: Gabber (Clover-X app). Screens from project/Gabber.
+       ============================================================ -->
+  <section class="page-hero dark product-hero" aria-labelledby="gb-title">
+    <img class="hero-mark" src="../assets/img/brand/clover-x-mark-white.svg" alt="" width="1220" height="1168" aria-hidden="true">
+    <div class="container product-hero-inner">
+      <div>
+        <a class="back-link" href="../#work"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>All projects</a>
+        <p class="eyebrow">Featured product · Made in India</p>
+        <div class="product-title">
+          <img src="../assets/img/projects/gabber/gabber-icon.svg" alt="" width="64" height="64">
+          <h1 id="gb-title">Gabber</h1>
+        </div>
+        <p class="product-tagline">Chat. Call. Discover.</p>
+        <p class="lead">More than a chat app. Gabber brings messaging, voice and video calls, groups, status updates and trusted local businesses into one familiar place.</p>
+        <ul class="product-badges" aria-label="Status">
+          <li><span class="dot" aria-hidden="true"></span>Android beta</li>
+          <li>Personal &amp; business</li>
+          <li>Built for India</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#early-access" data-dialog="early-access">Get early access <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-secondary btn-lg" href="#gb-features">See the app</a>
+        </div>
+      </div>
+      <div class="product-phones" aria-hidden="false">
+        <figure class="phone phone-back"><img src="../assets/img/projects/gabber/explore.webp" alt="Explore nearby screen in Gabber, listing verified local businesses with ratings and distance" width="540" height="1201" fetchpriority="high"></figure>
+        <figure class="phone phone-front"><img src="../assets/img/projects/gabber/inbox.webp" alt="The Gabber inbox with personal chats, a group and a verified business" width="540" height="1201" fetchpriority="high"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key facts -->
+  <section class="product-facts" aria-label="Key facts">
+    <div class="container">
+      <dl class="facts-strip">
+        <div><dt>Platform</dt><dd>Android (beta)</dd></div>
+        <div><dt>For</dt><dd>People &amp; local businesses</dd></div>
+        <div><dt>In one app</dt><dd>Messages · Calls · Groups · Status · Local business</dd></div>
+        <div><dt>Built by</dt><dd>Clover-X, Gujarat, India</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="gb-features" class="section" aria-labelledby="gb-feat-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Everything in one place</p>
+        <h2 id="gb-feat-title">Conversation that can go somewhere.</h2>
+        <p>Start with a message. Move to a call. Find a service nearby. Gabber keeps everyday actions close to the conversation.</p>
+      </div>
+      <ol class="feature-rows">
+        <li class="feature-row">
+          <figure class="phone "><img src="../assets/img/projects/gabber/inbox.webp" alt="Gabber inbox with chats, a group and status" width="540" height="1201" loading="lazy" decoding="async"></figure>
+          <div>
+            <span class="feature-num">01</span>
+            <h3>Chat naturally</h3>
+            <p>Personal conversations, group chats, voice notes, media and status updates in an interface that feels immediately familiar.</p>
+            <ul class="chips"><li class="chip">1:1 &amp; group chats</li><li class="chip">Voice notes</li><li class="chip">Media</li><li class="chip">Status updates</li></ul>
+          </div>
+        </li>
+        <li class="feature-row reverse">
+          <figure class="phone "><img src="../assets/img/projects/gabber/draw-together.webp" alt="A four-person Gabber video call with the draw-together tools sketching on screen" width="540" height="1201" loading="lazy" decoding="async"></figure>
+          <div>
+            <span class="feature-num">02</span>
+            <h3>Talk face to face, and draw together</h3>
+            <p>Move from messages to voice or video calls, including group calls. Draw together turns a call into a shared canvas: sketch, highlight and doodle live on everyone's screen.</p>
+            <ul class="chips"><li class="chip">Voice calls</li><li class="chip">Video calls</li><li class="chip">Group calls</li><li class="chip">Draw together</li></ul>
+          </div>
+        </li>
+        <li class="feature-row">
+          <figure class="phone "><img src="../assets/img/projects/gabber/explore.webp" alt="Explore nearby in Gabber with food, shops, services and hotels filters and a distance radius" width="540" height="1201" loading="lazy" decoding="async"></figure>
+          <div>
+            <span class="feature-num">03</span>
+            <h3>Discover local</h3>
+            <p>Explore nearby restaurants, shops, hotels and services by category and distance, see ratings and verification, then start a chat with the business directly inside Gabber.</p>
+            <ul class="chips"><li class="chip">Categories</li><li class="chip">5–50 km radius</li><li class="chip">Ratings</li><li class="chip">Verified badges</li></ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- For business -->
+  <section class="section dark" aria-labelledby="gb-biz-title">
+    <div class="container biz-layout">
+      <div>
+        <p class="eyebrow">Gabber for Business</p>
+        <h2 id="gb-biz-title" class="biz-title">Let nearby customers find you first.</h2>
+        <p class="biz-lead">Create a business presence, show what you offer, handle enquiries and keep customer conversations, orders and payments together.</p>
+        <ol class="biz-steps">
+          <li><span>01</span><div><h3>Be discoverable</h3><p>Appear when people explore businesses around them: restaurants, hotels, food stalls, shops and services.</p></div></li>
+          <li><span>02</span><div><h3>Build confidence</h3><p>Submit business details, location and an optional GST number for verification, and earn the verified badge.</p></div></li>
+          <li><span>03</span><div><h3>Serve in chat</h3><p>Turn discovery into conversation: share orders in the chat and let customers pay securely without leaving Gabber.</p></div></li>
+        </ol>
+      </div>
+      <div class="biz-phones">
+        <figure class="phone "><img src="../assets/img/projects/gabber/register-business.webp" alt="Register Business screen in Gabber with business type, name, phone, location and GST fields" width="540" height="1201" loading="lazy" decoding="async"></figure>
+        <figure class="phone "><img src="../assets/img/projects/gabber/business-chat.webp" alt="A Gabber business chat with an order summary and a Pay securely button" width="540" height="1201" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" aria-labelledby="gb-gallery-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Inside Gabber</p>
+        <h2 id="gb-gallery-title">Designed for the way you already connect.</h2>
+      </div>
+    </div>
+    <ul class="gallery" aria-label="Gabber screens, scroll sideways for more">
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/inbox.webp" alt="Inbox" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Inbox &amp; status</p></li>
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/business-chat.webp" alt="Business chat with payment" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Business chat &amp; payments</p></li>
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/explore.webp" alt="Explore nearby businesses" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Explore nearby</p></li>
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/group-call.webp" alt="Four-person group video call" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Call together</p></li>
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/draw-together.webp" alt="Drawing together on a video call" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Draw together on calls</p></li>
+      <li><figure class="phone "><img src="../assets/img/projects/gabber/register-business.webp" alt="Register a business" width="540" height="1201" loading="lazy" decoding="async"></figure><p>Grow a business</p></li>
+    </ul>
+  </section>
+
+  <!-- How it's built -->
+  <section class="section section-white" aria-labelledby="gb-tech-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How it's built</p>
+        <h2 id="gb-tech-title">Production-grade from day one.</h2>
+        <p>Gabber runs on a containerised backend with automated testing and a staged release pipeline, so every change is tested once and promoted, not rebuilt.</p>
+      </div>
+      <ul class="grid grid-3 tech-grid">
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-software"/></svg><div><strong>Android app</strong><span>The Gabber client, in beta testing</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-build"/></svg><div><strong>Node.js 22 API</strong><span>Backend for chat, calls, discovery and business</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg><div><strong>PostgreSQL 16</strong><span>Primary database, with versioned migrations</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg><div><strong>Redis 7</strong><span>Fast caching and real-time state</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><strong>JWT authentication</strong><span>Signed tokens for every session</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><div><strong>MSG91</strong><span>SMS one-time passwords for sign-in</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Cashfree</strong><span>Secure in-chat payments for businesses</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-web"/></svg><div><strong>Docker &amp; NGINX</strong><span>Containerised backend and website</span></div></li>
+        <li class="card tech"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg><div><strong>Secrets per environment</strong><span>Keys injected at runtime, never baked into images</span></div></li>
+      </ul>
+
+      <h3 class="sub-title" style="margin-top:56px">Release pipeline (GitHub Actions)</h3>
+      <ol class="pipeline" aria-label="Release pipeline stages">
+        <li><span class="stage">Test</span><small>Migrations + unit &amp; database tests on PostgreSQL and Redis</small></li>
+        <li><span class="stage">Lint &amp; validate</span><small>Code style and website link checks</small></li>
+        <li><span class="stage">Build once</span><small>Docker images pushed to GitHub Container Registry</small></li>
+        <li><span class="stage env">DEV</span><small>Automatic</small></li>
+        <li><span class="stage env">UAT</span><small>After approval</small></li>
+        <li><span class="stage env prod">PROD</span><small>After approval</small></li>
+      </ol>
+      <p class="pipeline-note">The image tested in DEV is the exact image released to PROD: it is re-tagged per environment, never rebuilt.</p>
+
+      <div class="trust-row">
+        <div class="card trust"><svg class="icon" aria-hidden="true"><use href="#i-security"/></svg><div><strong>Privacy-ready</strong><span>Privacy policy, terms, support and in-app account deletion pages, as required for the Google Play listing.</span></div></div>
+        <div class="card trust"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Official builds only</strong><span>The download link will be published here when the signed Android build is ready. Never install Gabber from an unofficial link.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section dark" aria-labelledby="gb-cta-title">
+    <div class="container cta-band">
+      <div>
+        <p class="eyebrow">Early access</p>
+        <h2 id="gb-cta-title">Ready to start gabbering?</h2>
+        <p>Gabber is being prepared for Android beta testing. Request early access and we will email your invite when the build is ready, for personal use or for your business.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="#early-access" data-dialog="early-access">Join the beta <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-secondary btn-lg" href="../#work">More projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EARLY ACCESS POP-UP (Formspree form "Gabber", ID xpppqzay) ===== -->
+  <dialog id="early-access" class="modal" aria-labelledby="ea-title">
+    <div class="modal-card">
+      <a class="modal-close" href="#" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></a>
+      <div class="modal-head">
+        <img src="../assets/img/projects/gabber/gabber-icon.svg" alt="" width="44" height="44">
+        <div>
+          <p class="eyebrow">Gabber · Android beta</p>
+          <h2 id="ea-title">Get early access</h2>
+        </div>
+      </div>
+      <p class="modal-intro">Join the Android beta. We will email you an invitation as soon as the signed build is ready.</p>
+
+      <form class="contact-form ea-form" action="https://formspree.io/f/xpppqzay" method="POST">
+        <input type="hidden" name="_subject" value="Gabber early access request">
+        <p class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="ea-name">Full name</label>
+            <input id="ea-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="ea-name-err">
+            <p class="err" id="ea-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="ea-city">City</label>
+            <input id="ea-city" name="city" type="text" autocomplete="address-level2" required maxlength="80" aria-describedby="ea-city-err" data-error="Please enter your city.">
+            <p class="err" id="ea-city-err"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ea-email">Google account email</label>
+          <input id="ea-email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="ea-email-hint ea-email-err">
+          <p class="hint" id="ea-email-hint">Use the Gmail / Google account on your Android phone. Beta invites from Google Play are sent to this address.</p>
+          <p class="err" id="ea-email-err"></p>
+        </div>
+
+        <fieldset class="field choice">
+          <legend>I want to use Gabber</legend>
+          <div class="choice-row">
+            <label class="choice-pill"><input type="radio" name="account_type" value="Personal" required data-err="ea-type-err" data-error="Please choose personal or business."> <span>For personal use</span></label>
+            <label class="choice-pill"><input type="radio" name="account_type" value="Business"> <span>For my business</span></label>
+          </div>
+          <p class="err" id="ea-type-err"></p>
+        </fieldset>
+
+        <div class="field ea-business">
+          <label for="ea-business">Business name <span class="opt">(if joining as a business)</span></label>
+          <input id="ea-business" name="business_name" type="text" autocomplete="organization" maxlength="120">
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="ea-phone">Phone / WhatsApp <span class="opt">(optional)</span></label>
+            <input id="ea-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+91">
+          </div>
+          <div class="field">
+            <label for="ea-device">Android phone model <span class="opt">(optional)</span></label>
+            <input id="ea-device" name="device" type="text" maxlength="80" placeholder="e.g. Samsung Galaxy A54">
+          </div>
+        </div>
+
+        <div class="field field-check">
+          <input id="ea-consent" name="consent" type="checkbox" value="Yes" required aria-describedby="ea-consent-err" data-error="Please confirm you agree so we can send your invite.">
+          <label for="ea-consent">I agree that Clover-X may use these details to contact me about the Gabber beta, as described in the <a href="../privacy.html">privacy policy</a>.</label>
+          <p class="err" id="ea-consent-err"></p>
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-block-mobile" type="submit">
+            <span class="mark-spin btn-spinner" aria-hidden="true">
+              <img class="ghost" src="../assets/img/brand/clover-x-mark-white.svg" alt="" width="20" height="19">
+              <img class="lit" src="../assets/img/brand/clover-x-mark-white.svg" alt="" width="20" height="19">
+            </span>
+            <span class="btn-label">Request early access</span>
+            <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+        <p class="form-error" role="alert" hidden>Sorry, your request could not be sent. Please try again, or email us at <a href="mailto:info@clover-x.in">info@clover-x.in</a>.</p>
+      </form>
+
+      <div class="form-success" hidden tabindex="-1">
+        <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <h3>You're on the list!</h3>
+        <p>We will email your Gabber beta invitation as soon as the Android build is ready.</p>
+        <a class="btn btn-secondary" href="#" data-close style="margin-top:20px">Close</a>
+      </div>
+    </div>
+  </dialog>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer dark">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand-link" href="../" aria-label="Clover-X home"><img src="../assets/img/brand/clover-x-logo-white.svg" alt="Clover-X" width="150" height="115" loading="lazy"></a>
+        <p class="footer-tagline">Secure, connected technology for growing businesses.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-label">Explore</h2>
+        <ul>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../#why">Why Clover-X</a></li>
+          <li><a href="../#process">Process</a></li>
+          <li><a href="../team.html">Team</a></li>
+          <li><a href="../#work">Projects</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-label">Services</h2>
+        <ul>
+          <li><a href="../#service-security">Security</a></li>
+          <li><a href="../#service-web-apps">Web Apps</a></li>
+          <li><a href="../#service-software">Software</a></li>
+          <li><a href="../#service-communication">Communication Technology</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-label">Contact</h2>
+        <ul>
+          <li><a href="mailto:info@clover-x.in">info@clover-x.in</a></li>
+          <li>Gujarat, India</li>
+          <li><a href="../#contact">Send us a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> Clover-X. All rights reserved.</p>
+      <ul>
+        <li><a href="../privacy.html">Privacy policy</a></li>
+        <li><a href="../imprint.html">Legal notice</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

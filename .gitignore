@@ -19,3 +19,6 @@ favicon-32x32.png
 Thumbs.db
 desktop.ini
 .vscode/
+
+# Gabber source build (the site uses optimised copies in assets/img/projects/gabber/)
+project/

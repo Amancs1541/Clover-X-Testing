@@ -61,29 +61,64 @@
     });
   }
 
-  /* ---- Contact form: validation + sending without leaving the page ---- */
-  var form = document.querySelector('.contact-form');
-  if (form) {
+  /* ---- Pop-up dialogs (e.g. Gabber early access): links with data-dialog open them ---- */
+  document.querySelectorAll('a[data-dialog]').forEach(function (link) {
+    var dialog = document.getElementById(link.getAttribute('data-dialog'));
+    if (!dialog || typeof dialog.showModal !== 'function') return; // without support, the #link fallback shows it
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      dialog.showModal();
+      var first = dialog.querySelector('input:not([type=hidden]):not([tabindex="-1"])');
+      if (first) first.focus();
+    });
+  });
+  document.querySelectorAll('dialog.modal').forEach(function (dialog) {
+    dialog.querySelectorAll('[data-close]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); dialog.close(); });
+    });
+    // Click on the dimmed backdrop closes the dialog.
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    if (location.hash === '#' + dialog.id && typeof dialog.showModal === 'function') {
+      history.replaceState(null, '', location.pathname);
+      dialog.showModal();
+    }
+  });
+
+  /* ---- Forms (contact + early access): validation + sending to Formspree without leaving the page ---- */
+  var messages = {
+    name: function () { return 'Please enter your name.'; },
+    email: function (el) { return el.value ? 'Please enter a valid email address, like name@company.com.' : 'Please enter your email address.'; },
+    interest: function () { return 'Please choose an area of interest.'; },
+    message: function (el) { return el.value ? 'Please add a little more detail (at least 10 characters).' : 'Please tell us a little about your project.'; },
+    consent: function () { return 'Please confirm you agree so we can reply to you.'; }
+  };
+  document.querySelectorAll('form.contact-form').forEach(function (form) {
     form.noValidate = true; // we show our own, friendlier messages
-    var messages = {
-      name: function () { return 'Please enter your name.'; },
-      email: function (el) { return el.value ? 'Please enter a valid email address, like name@company.com.' : 'Please enter your email address.'; },
-      interest: function () { return 'Please choose an area of interest.'; },
-      message: function (el) { return el.value ? 'Please add a little more detail (at least 10 characters).' : 'Please tell us a little about your project.'; },
-      consent: function () { return 'Please confirm you agree so we can reply to you.'; }
-    };
-    var fields = Array.prototype.slice.call(form.querySelectorAll('[required]'));
+    // One entry per field; for a group of radio buttons, only the first one.
+    var seen = {};
+    var fields = Array.prototype.slice.call(form.querySelectorAll('[required]')).filter(function (el) {
+      if (el.type !== 'radio') return true;
+      if (seen[el.name]) return false;
+      seen[el.name] = true;
+      return true;
+    });
     var check = function (el) {
-      var err = document.getElementById(el.id + '-err');
+      var err = document.getElementById(el.getAttribute('data-err') || el.id + '-err');
       var ok = el.checkValidity();
-      err.textContent = ok ? '' : messages[el.name](el);
-      el.setAttribute('aria-invalid', String(!ok));
+      var msg = el.getAttribute('data-error') || (messages[el.name] ? messages[el.name](el) : 'Please fill in this field.');
+      if (!ok && el.value && el.getAttribute('data-error-invalid') && el.type !== 'radio' && el.type !== 'checkbox') msg = el.getAttribute('data-error-invalid');
+      err.textContent = ok ? '' : msg;
+      var group = el.type === 'radio' ? form.querySelectorAll('input[name="' + el.name + '"]') : [el];
+      Array.prototype.forEach.call(group, function (g) { g.setAttribute('aria-invalid', String(!ok)); });
       return ok;
     };
     fields.forEach(function (el) {
-      el.addEventListener('blur', function () { if (el.hasAttribute('aria-invalid')) check(el); });
-      el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') check(el); });
-      el.addEventListener('change', function () { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+      var group = el.type === 'radio' ? form.querySelectorAll('input[name="' + el.name + '"]') : [el];
+      Array.prototype.forEach.call(group, function (g) {
+        g.addEventListener('blur', function () { if (el.hasAttribute('aria-invalid')) check(el); });
+        g.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+        g.addEventListener('change', function () { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+      });
     });
 
     form.addEventListener('submit', function (e) {
@@ -93,6 +128,7 @@
 
       var btn = form.querySelector('button[type="submit"]');
       var label = btn.querySelector('.btn-label');
+      var labelText = label.textContent;
       var errorBox = form.querySelector('.form-error');
       btn.classList.add('is-loading');
       btn.setAttribute('aria-disabled', 'true');
@@ -112,8 +148,8 @@
           errorBox.hidden = false;
           btn.classList.remove('is-loading');
           btn.removeAttribute('aria-disabled');
-          label.textContent = 'Send message';
+          label.textContent = labelText;
         });
     });
-  }
+  });
 })();
