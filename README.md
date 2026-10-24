@@ -28,7 +28,7 @@ Open any `.html` file in a text editor (Notepad, VS Code) and change the words b
   2. their card in `team.html`,
   3. their own page in `portfolio/`.
 
-  **Nihar's photo:** save a portrait (about 480×600 px) as `assets/img/team/nihar-mehta.jpg`, then follow the `EDIT photo:` comment next to the "NM" placeholder (3 places) to swap in the `<img>` line.
+  **Photos:** portraits are 480×600 px, saved as both `.jpg` and `.webp` in `assets/img/team/` (e.g. `nihar-mehta.jpg` / `nihar-mehta.webp`). To change one, replace both files with the same names.
 
 - **Adding a new team member:** copy `portfolio/nihar-mehta.html` to e.g. `portfolio/first-last.html` and change its content; then copy a card `<li>…</li>` in `index.html` and `team.html`, point it at the new page, and add the new card to the "Also on the team" list on the other portfolio pages. Add the page to `sitemap.xml`.
 - **Projects:** the Projects section in `index.html` shows six projects copied from the team's portfolio pages, each credited to its author. Copy a `<li data-domains="…">…</li>` block to add one; `data-domains` controls the filter buttons (`security`, `web-apps`, `software`, `communication`). Only include client names, logos or numbers that the client has agreed to share.
